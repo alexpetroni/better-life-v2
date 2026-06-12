@@ -1,0 +1,13 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"site_name": "Viață Mai Bună",
+	"nav_home": "Acasă",
+	"nav_blog": "Blog",
+	"nav_shop": "Magazin",
+	"nav_quizzes": "Teste",
+	"footer_tagline": "Trăiește mai bine, pas cu pas.",
+	"cta_start_quiz": "Începe testul",
+	"email_placeholder": "adresa ta de email",
+	"submit": "Trimite",
+	"loading": "Se încarcă..."
+}

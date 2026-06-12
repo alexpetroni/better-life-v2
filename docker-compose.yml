@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: betterlife-db
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: betterlife
+    ports:
+      - "5433:5432"
+    volumes:
+      - betterlife-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  betterlife-db-data:

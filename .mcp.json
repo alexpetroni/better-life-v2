@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "svelte": {
+      "type": "http",
+      "url": "https://mcp.svelte.dev/mcp"
+    },
+    "stripe": {
+      "command": "npx",
+      "args": ["-y", "@stripe/mcp", "--tools=all", "--api-key=${STRIPE_SECRET_KEY}"]
+    }
+  }
+}
