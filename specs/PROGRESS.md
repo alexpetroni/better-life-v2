@@ -103,7 +103,7 @@
 
 ## Phase 06 — Campaigns and launch polish
 - status: done
-- commit: pending
+- commit: b69c006350b6bdebe3c62dbd77946b53e3b4c53e
 - checks:
   - [x] `pnpm check` → 0 errors, 0 warnings
   - [x] `pnpm vitest run` → 47 tests pass (6 test files)
