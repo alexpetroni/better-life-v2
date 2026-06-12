@@ -12,9 +12,8 @@ const config = {
 				if (referrer && (
 					path.startsWith('/blog') ||
 					path.startsWith('/shop') ||
-					path.startsWith('/quiz') ||
-					path.startsWith('/confidentialitate') ||
-					path.startsWith('/termeni')
+					path.startsWith('/termeni') ||
+					path === '/quiz/obiceiuri'
 				)) {
 					return;
 				}

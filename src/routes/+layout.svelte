@@ -33,7 +33,7 @@
 			<p class="text-lg font-medium text-white mb-2">{m.site_name()}</p>
 			<p class="text-sm mb-4">{m.footer_tagline()}</p>
 			<ul class="flex justify-center gap-6 text-sm">
-				<li><a href="/confidentialitate" class="hover:text-white transition-colors">Confidențialitate</a></li>
+				<li><a href="/privacy" class="hover:text-white transition-colors">Confidențialitate</a></li>
 				<li><a href="/termeni" class="hover:text-white transition-colors">Termeni</a></li>
 			</ul>
 		</div>
