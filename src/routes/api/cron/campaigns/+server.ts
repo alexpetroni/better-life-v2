@@ -23,6 +23,20 @@ export async function GET({ request }) {
 	// Track which subscriber IDs have been sent a campaign this run (at most one per run)
 	const sentThisRun = new Set<string>();
 
+	// Last send time of ANY campaign per recipient — the cadence window spans all
+	// campaigns: a weekly subscriber gets at most one campaign email per window,
+	// not one per campaign
+	const lastSends = await db
+		.select({
+			recipient_email: email_sends.recipient_email,
+			sent_at: max(email_sends.sent_at)
+		})
+		.from(email_sends)
+		.where(like(email_sends.email_key, 'campaign:%'))
+		.groupBy(email_sends.recipient_email);
+
+	const lastSendMap = new Map(lastSends.map((s) => [s.recipient_email, s.sent_at]));
+
 	for (const campaign of activeCampaigns) {
 		results[campaign.id] = { sent: 0, skipped: 0, failed: 0 };
 
@@ -60,18 +74,7 @@ export async function GET({ request }) {
 				subscribers.primary_quiz_slug
 			);
 
-		// Get last campaign send times for this campaign
 		const campaignKey = `campaign:${campaign.id}`;
-		const lastSends = await db
-			.select({
-				recipient_email: email_sends.recipient_email,
-				sent_at: max(email_sends.sent_at)
-			})
-			.from(email_sends)
-			.where(eq(email_sends.email_key, campaignKey))
-			.groupBy(email_sends.recipient_email);
-
-		const lastSendMap = new Map(lastSends.map((s) => [s.recipient_email, s.sent_at]));
 
 		for (const sub of confirmedSubs) {
 			if (sentThisRun.has(sub.id)) {

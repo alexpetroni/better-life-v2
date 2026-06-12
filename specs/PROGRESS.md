@@ -123,3 +123,15 @@
     All business logic tested via unit tests (47 passing).
     /og/quiz-obiceiuri.png is a copy of quiz-somn.png; replace with real design before launch.
     vercel.json already had campaigns cron from earlier in this phase.
+
+## Post-run verification (host, with Postgres available)
+- performed by: supervising session, after phase-06 commit
+- checks (the ones skipped in phase 06 for lack of Postgres):
+  - [x] whole-site smoke: all 10 routes → 200
+  - [x] campaign cron: 1 send to eligible subscriber; drip-window + audience filters correct
+  - [x] FOUND BUG: 2nd cron run sent a different campaign to the same weekly subscriber —
+        cadence query was per-campaign instead of spanning campaign:% — fixed in 4642a86;
+        re-verified: 2nd run sends 0
+  - [x] cadence 'none' honored → 0 sends
+  - [x] drip sequence-switch: confirmed 30d ago + obiceiuri result 2d ago → exactly seq:obiceiuri-v1:1
+  - [x] pnpm check (0 errors) + vitest (47/47) + clean test-data teardown
