@@ -27,7 +27,7 @@
 
 ## Phase 02 — Core funnel
 - status: done
-- commit: (pending)
+- commit: 1949cee050d2d6ebe58db88a7c06e94eaa539bcd
 - checks:
   - [x] `pnpm check` → 0 errors
   - [x] `pnpm vitest run` → 17 tests pass
@@ -50,3 +50,17 @@
     unsubscribe: removed separate +server.ts; GET handled in +page.server.ts load,
     RFC 8058 POST handled as default form action in same file.
     Added /quiz listing page (not in spec but required since layout nav links to /quiz).
+
+## Phase 03 — Drip emails
+- status: done
+- commit: (pending)
+- checks:
+  - [x] `pnpm check` → 0 errors
+  - [x] `pnpm vitest run` → 23 tests pass
+  - [x] `pnpm build` → succeeds
+  - [x] GET /api/cron/drip without auth → 401
+  - [x] first run with backdated subscriber → `{"processed":1,"sent":3,"skipped":0,"failed":0}`
+  - [x] email_keys: seq:somn-v1:1, seq:somn-v1:2, seq:somn-v1:3
+  - [x] idempotency: `{"processed":1,"sent":0,"skipped":3,"failed":0}`
+  - [x] count still 3 after second run
+  - [x] unsubscribed → `{"processed":0,...}`
