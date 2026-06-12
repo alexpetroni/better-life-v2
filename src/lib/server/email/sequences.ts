@@ -144,6 +144,139 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 				})
 		}
 	]
+,
+	'obiceiuri-v1': [
+		{
+			step: 1,
+			dayOffset: 1,
+			subject: 'Pasul 1: De ce voința singură nu funcționează',
+			bodyHtml: ({ profile, prefsUrl, unsubUrl }) =>
+				emailLayout({
+					title: 'Pasul 1: Voința nu este suficientă',
+					bodyHtml: `
+<p>Bună ziua,</p>
+<p>Ești <strong>${profile.name}</strong> — și acesta este primul email din planul tău de formare a obiceiurilor.</p>
+<p>Cel mai mare mit despre obiceiuri: că ai nevoie de mai multă voință. Realitatea: voința este o resursă limitată care se epuizează zilnic.</p>
+<p>Cercetătorii de la Stanford au demonstrat că oamenii cu cel mai bun autocontrol nu sunt cei care rezistă tentațiilor — sunt cei care <em>evită situațiile</em> care necesită autocontrol.</p>
+<p><strong>Principiul nr. 1: Proiectează pentru succes, nu rezista pentru succes.</strong></p>
+<p>Iată exercițiul tău pentru astăzi: identifică un obicei pe care vrei să-l construiești și răspunde la aceste întrebări:
+<ul>
+<li>Ce trebuie să fie <em>vizibil</em> pentru a-ți aminti de el?</li>
+<li>Ce trebuie să fie <em>ușor de accesat</em>?</li>
+<li>Ce trebuie să fie <em>eliminat din cale</em>?</li>
+</ul></p>
+<p>Mâine vorbim despre cel mai puternic instrument al tău: declanșatoarele.</p>
+<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+					`,
+					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
+				})
+		},
+		{
+			step: 2,
+			dayOffset: 3,
+			subject: 'Pasul 2: Declanșatoarele — cheia automatizării',
+			bodyHtml: ({ profile, prefsUrl, unsubUrl }) =>
+				emailLayout({
+					title: 'Pasul 2: Declanșatoarele',
+					bodyHtml: `
+<p>Bună ziua,</p>
+<p>Obiceiurile nu se construiesc din voință — se construiesc din conexiuni. Creierul tău funcționează pe principiul <em>dacă X, atunci Y</em>.</p>
+<p><strong>Formula obiceiului:</strong></p>
+<p><strong>Declanșator → Rutină → Recompensă</strong></p>
+<p>Ca ${profile.name}, cel mai eficient lucru pe care îl poți face acum este să <em>ancorezi</em> noul obicei de ceva ce faci deja.</p>
+<p>Exemple concrete:
+<ul>
+<li>"După ce fac cafeaua dimineață → citesc 5 minute"</li>
+<li>"Înainte de duș → fac 5 minute de stretching"</li>
+<li>"Când mă așez la birou → deschid jurnalul și scriu un task"</li>
+</ul></p>
+<p>Aceasta se numește <em>habit stacking</em> — stivuirea obiceiurilor. Avantajul: nu trebuie să-ți amintești separat de obicei, rutina existentă devine declanșatorul.</p>
+<p><strong>Exercițiu pentru astăzi:</strong> Scrie formula completă pentru obiceiul tău: "Imediat după ce [DECLANȘATOR EXISTENT], voi [OBICEI NOU]."</p>
+<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+					`,
+					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
+				})
+		},
+		{
+			step: 3,
+			dayOffset: 6,
+			subject: 'Pasul 3: Cum să nu mai renunți după ziua 5',
+			bodyHtml: ({ profile, prefsUrl, unsubUrl }) =>
+				emailLayout({
+					title: 'Pasul 3: Ziua 5 — punctul critic',
+					bodyHtml: `
+<p>Bună ziua,</p>
+<p>Felicitări — ai depășit prima săptămână! Dar acum urmează cel mai periculos moment: zilele 5-10, când entuziasmul scade și automatismul nu s-a format încă.</p>
+<p>Studiile arată că obiceiurile se formează în medie în 66 de zile — nu 21 cum se spune. Primele 3 săptămâni sunt critice.</p>
+<p><strong>Regula de aur pentru ${profile.name}:</strong></p>
+<p>Niciodată două zile consecutive fără obicei. O zi lipsă este un accident. Două zile consecutive devin un nou obicei — cel de a nu face nimic.</p>
+<p>Când simți că nu vrei să faci obiceiul astăzi:</p>
+<ol>
+<li>Fă varianta minimă (2 minute)</li>
+<li>Reamintește-ți că ești <em>tipul de persoană care face asta</em></li>
+<li>Marchează ziua în jurnal chiar și pentru varianta minimă</li>
+</ol>
+<p>Seria vizuală — o bifă pentru fiecare zi — este unul dintre cei mai puternici motivatori psihologici. Nu vrei să rupi lanțul.</p>
+<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+					`,
+					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
+				})
+		},
+		{
+			step: 4,
+			dayOffset: 10,
+			subject: 'Pasul 4: Recompensele care funcționează (și cele care sabotează)',
+			bodyHtml: ({ profile, prefsUrl, unsubUrl }) =>
+				emailLayout({
+					title: 'Pasul 4: Recompensele',
+					bodyHtml: `
+<p>Bună ziua,</p>
+<p>Creierul tău învață prin recompense. Problema: recompensele prea mari sau prea distante nu funcționează pentru formarea obiceiurilor. Ai nevoie de satisfacție <em>imediată</em>.</p>
+<p><strong>Recompense eficiente după obicei:</strong>
+<ul>
+<li>O bifă vizibilă pe calendar (satisfacție imediată)</li>
+<li>Un moment de reflecție: "Am făcut asta azi" (auto-recunoaștere)</li>
+<li>O activitate plăcută scurtă: muzica preferată în timp ce faci obiceiul</li>
+</ul></p>
+<p><strong>Recompense care sabotează:</strong>
+<ul>
+<li>"Am alergat azi, merit ceva dulce" — contracarează obiceiul</li>
+<li>Recompense mari și rare (o vacanță după 30 de zile) — prea distante pentru creier</li>
+</ul></p>
+<p>Ca ${profile.name}, principala ta recompensă ar trebui să fie <em>identitară</em>: confirmarea că ești tipul de persoană care construiește obiceiuri bune.</p>
+<p>Mai avem un email — recapitularea și planul tău următor.</p>
+<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+					`,
+					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
+				})
+		},
+		{
+			step: 5,
+			dayOffset: 14,
+			subject: 'Pasul 5: Ce urmează — un sistem pentru toată viața',
+			bodyHtml: ({ profile, prefsUrl, unsubUrl }) =>
+				emailLayout({
+					title: 'Pasul 5: Un sistem pentru viață',
+					bodyHtml: `
+<p>Bună ziua,</p>
+<p>Ai parcurs 2 săptămâni din planul tău de obiceiuri. Ești la jumătatea drumului spre automatizare — felicitări!</p>
+<p><strong>Ce ai învățat:</strong></p>
+<ul>
+<li>✅ Voința singură nu e suficientă — mediul și sistemele sunt cheia</li>
+<li>✅ Declanșatoarele ancorează obiceiurile de rutinele existente</li>
+<li>✅ Niciodată două zile consecutive fără obicei</li>
+<li>✅ Recompensele imediate (bife, recunoaștere) sunt mai eficiente decât cele mari și rare</li>
+</ul>
+<p><strong>Ce urmează:</strong></p>
+<p>Profilul tău — <strong>${profile.name}</strong> — îți arată că ai puncte forte specifice. Continuă să construiești pe ele.</p>
+<p>Cel mai important pas acum: după ce obiceiul curent este stabilit (aprox. 60 de zile), adaugă al doilea obicei. Nu înainte.</p>
+<p>Ești la 2 săptămâni dintr-o călătorie de 60. Dar deja ești diferit față de cel care a început.</p>
+<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+					`,
+					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
+				})
+		}
+	]
 };
 
 export function maxOffsetDays(sequenceKey: string): number {

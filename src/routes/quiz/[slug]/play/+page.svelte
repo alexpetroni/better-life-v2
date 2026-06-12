@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { track } from '@vercel/analytics';
 	import EmailCaptureForm from '$lib/components/EmailCaptureForm.svelte';
 	import ProgressBar from '$lib/components/ProgressBar.svelte';
 	import QuizQuestion from '$lib/components/QuizQuestion.svelte';
@@ -27,9 +28,16 @@
 		if (current > 0) current -= 1;
 	}
 
+	function selectOptionWithTracking(optionId: string) {
+		if (current === 0) track('quiz_started', { quiz: quiz.slug });
+		selectOption(optionId);
+	}
+
 	async function handleEmailSuccess(resultToken: string | null) {
 		submitted = true;
+		track('quiz_completed', { quiz: quiz.slug });
 		if (resultToken) {
+			track('email_submitted', { quiz: quiz.slug });
 			await goto(`/quiz/${quiz.slug}/results?t=${resultToken}`);
 		}
 	}
@@ -46,7 +54,7 @@
 				<QuizQuestion
 					question={currentQuestion}
 					selected={answers[currentQuestion.id]}
-					onSelect={selectOption}
+					onSelect={selectOptionWithTracking}
 				/>
 
 				{#if current > 0}

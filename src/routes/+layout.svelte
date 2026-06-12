@@ -1,6 +1,12 @@
 <script lang="ts">
 	import '../app.css';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
 	import * as m from '$lib/paraglide/messages.js';
+
+	if (!dev) {
+		inject();
+	}
 
 	interface Props {
 		children: import('svelte').Snippet;

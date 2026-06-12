@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import { track } from '@vercel/analytics';
 
 	const formatRon = (cents: number) =>
 		new Intl.NumberFormat('ro-RO', { style: 'currency', currency: 'RON' }).format(cents / 100);
@@ -24,6 +25,7 @@
 	async function checkout() {
 		loading = true;
 		checkoutError = null;
+		track('checkout_started', { item_count: cart.items.length });
 		try {
 			const res = await fetch('/api/checkout', {
 				method: 'POST',
