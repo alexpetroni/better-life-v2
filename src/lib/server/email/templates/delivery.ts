@@ -1,0 +1,66 @@
+interface DownloadLink {
+	productName: string;
+	url: string;
+}
+
+interface DeliveryEmailParams {
+	links: DownloadLink[];
+}
+
+export function deliveryEmail({ links }: DeliveryEmailParams): string {
+	const buttons = links
+		.map(
+			(link) => `
+    <div style="margin:16px 0;">
+      <p style="margin:0 0 8px;font-weight:600;color:#374151;">${link.productName}</p>
+      <a href="${link.url}" style="display:inline-block;background-color:#2d7a4f;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:6px;font-weight:600;font-size:15px;">Descarcă acum</a>
+    </div>`
+		)
+		.join('');
+
+	return `<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descarcă-ți produsele</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f9fafb;font-family:Inter,ui-sans-serif,system-ui,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f9fafb;padding:24px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <tr>
+            <td style="background-color:#2d7a4f;padding:24px 32px;">
+              <a href="https://viatamaibuna.ro" style="color:#ffffff;text-decoration:none;font-size:20px;font-weight:700;">Viață Mai Bună</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:32px;color:#1f2937;font-size:16px;line-height:1.6;">
+              <h2 style="margin:0 0 16px;color:#111827;font-size:22px;">Descarcă-ți produsele digitale</h2>
+              <p style="margin:0 0 24px;">Comanda ta a fost confirmată. Folosește linkurile de mai jos pentru a-ți descărca produsele:</p>
+              ${buttons}
+              <div style="margin:32px 0 0;padding:16px;background-color:#fef3c7;border-radius:6px;border-left:4px solid #d97706;">
+                <p style="margin:0;color:#92400e;font-size:14px;">
+                  <strong>Important:</strong> Linkul expiră în 7 zile și permite maximum 5 descărcări. Salvează fișierele pe dispozitivul tău.
+                </p>
+              </div>
+              <p style="margin:24px 0 0;">
+                <a href="https://viatamaibuna.ro" style="color:#2d7a4f;text-decoration:underline;">Vizitează Viață Mai Bună</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f3f4f6;padding:24px 32px;border-top:1px solid #e5e7eb;">
+              <p style="margin:0;color:#6b7280;font-size:13px;">
+                Acesta este un email de livrare tranzacțional. Dacă ai probleme cu descărcarea, răspunde la acest email.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}

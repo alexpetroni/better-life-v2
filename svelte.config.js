@@ -11,7 +11,6 @@ const config = {
 				// Ignore 404s for routes being created in later phases
 				if (referrer && (
 					path.startsWith('/blog') ||
-					path.startsWith('/shop') ||
 					path.startsWith('/termeni') ||
 					path === '/quiz/obiceiuri'
 				)) {

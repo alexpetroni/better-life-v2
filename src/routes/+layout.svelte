@@ -20,6 +20,7 @@
 				<li><a href="/blog" class="hover:text-brand-100 transition-colors">{m.nav_blog()}</a></li>
 				<li><a href="/shop" class="hover:text-brand-100 transition-colors">{m.nav_shop()}</a></li>
 				<li><a href="/quiz" class="hover:text-brand-100 transition-colors">{m.nav_quizzes()}</a></li>
+					<li><a href="/cart" class="hover:text-brand-100 transition-colors">{m.nav_cart()}</a></li>
 			</ul>
 		</nav>
 	</header>

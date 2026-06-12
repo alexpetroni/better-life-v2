@@ -1,8 +1,8 @@
 import { db } from '$lib/server/db/client.js';
-import { quiz_results } from '$lib/server/db/schema.js';
+import { quiz_results, products } from '$lib/server/db/schema.js';
 import { getQuiz } from '$lib/content/quizzes/index.js';
 import { verifyToken } from '$lib/server/tokens.js';
-import { eq } from 'drizzle-orm';
+import { eq, and, inArray } from 'drizzle-orm';
 
 export const prerender = false;
 
@@ -36,5 +36,15 @@ export async function load({ url }) {
 	// Resolve profile by stored profile_key (fall back if version mismatch)
 	const profile = quiz.profiles.find((p) => p.key === result.profile_key) ?? quiz.profiles[quiz.profiles.length - 1];
 
-	return { valid: true as const, quiz, profile, result };
+	// Load recommended products
+	const recommendedSlugs = profile.recommendedProductSlugs ?? [];
+	const recommendedProducts =
+		recommendedSlugs.length > 0
+			? await db
+					.select()
+					.from(products)
+					.where(and(inArray(products.slug, recommendedSlugs), eq(products.active, true)))
+			: [];
+
+	return { valid: true as const, quiz, profile, result, recommendedProducts };
 }

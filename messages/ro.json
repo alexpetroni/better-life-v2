@@ -9,5 +9,14 @@
 	"cta_start_quiz": "Începe testul",
 	"email_placeholder": "adresa ta de email",
 	"submit": "Trimite",
-	"loading": "Se încarcă..."
+	"loading": "Se încarcă...",
+	"nav_cart": "Coș",
+	"cart_empty": "Coșul tău este gol.",
+	"cart_go_shop": "Mergi la magazin",
+	"cart_checkout": "Finalizează comanda",
+	"cart_total": "Total",
+	"cart_free_shipping_hint": "Livrare gratuită peste 200 lei",
+	"add_to_cart": "Adaugă în coș",
+	"checkout_success": "Mulțumim pentru comandă!",
+	"checkout_cancel": "Comanda a fost anulată"
 }

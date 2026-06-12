@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
+	import ProductCard from '$lib/components/ProductCard.svelte';
 	import * as m from '$lib/paraglide/messages.js';
 
 	const { data } = $props();
@@ -16,13 +17,32 @@
 	</div>
 
 	{#if topic.quizSlug}
-		<div class="text-center">
+		<div class="text-center mb-12">
 			<a
 				href="/quiz/{topic.quizSlug}"
 				class="inline-block bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-3 rounded-lg transition-colors text-lg"
 			>
 				{m.cta_start_quiz()}
 			</a>
+		</div>
+	{/if}
+
+	{#if data.products && data.products.length > 0}
+		<div class="mt-4">
+			<h2 class="text-xl font-bold text-gray-900 mb-6">Produse recomandate</h2>
+			<div class="grid gap-5 sm:grid-cols-2">
+				{#each data.products as product (product.id)}
+					<ProductCard
+						id={product.id}
+						slug={product.slug}
+						name={product.name}
+						description={product.description}
+						priceCents={product.price_cents}
+						type={product.type as 'physical' | 'digital'}
+						imageUrl={product.image_url}
+					/>
+				{/each}
+			</div>
 		</div>
 	{/if}
 </div>

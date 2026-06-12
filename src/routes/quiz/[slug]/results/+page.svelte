@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ProductCard from '$lib/components/ProductCard.svelte';
 	const { data } = $props();
 </script>
 
@@ -39,12 +40,22 @@
 			</p>
 		</div>
 
-		{#if profile?.recommendedProductSlugs?.length}
+		{#if data.recommendedProducts && data.recommendedProducts.length > 0}
 			<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-6">
-				<h3 class="text-lg font-semibold text-gray-900 mb-4">Recomandate pentru tine</h3>
-				<p class="text-gray-500 text-sm">
-					Produsele recomandate vor fi disponibile în curând în magazinul nostru.
-				</p>
+				<h3 class="text-lg font-semibold text-gray-900 mb-6">Recomandate pentru profilul tău</h3>
+				<div class="grid gap-4 sm:grid-cols-2">
+					{#each data.recommendedProducts as product (product.id)}
+						<ProductCard
+							id={product.id}
+							slug={product.slug}
+							name={product.name}
+							description={product.description}
+							priceCents={product.price_cents}
+							type={product.type as 'physical' | 'digital'}
+							imageUrl={product.image_url}
+						/>
+					{/each}
+				</div>
 			</div>
 		{/if}
 

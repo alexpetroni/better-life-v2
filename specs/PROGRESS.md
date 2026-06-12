@@ -53,7 +53,7 @@
 
 ## Phase 03 — Drip emails
 - status: done
-- commit: (pending)
+- commit: a21f090
 - checks:
   - [x] `pnpm check` → 0 errors
   - [x] `pnpm vitest run` → 23 tests pass
@@ -64,3 +64,21 @@
   - [x] idempotency: `{"processed":1,"sent":0,"skipped":3,"failed":0}`
   - [x] count still 3 after second run
   - [x] unsubscribed → `{"processed":0,...}`
+
+## Phase 04 — Shop and Stripe
+- status: done
+- commit: (pending)
+- checks:
+  - [x] `pnpm db:migrate && pnpm tsx scripts/seed.ts` → 4 products
+  - [x] `pnpm tsx scripts/seed.ts` re-run → idempotent, still 4
+  - [x] `pnpm db:query "select count(*) from products"` → 4
+  - [x] `pnpm check && pnpm vitest run && pnpm build` → all green (30 tests)
+  - [x] `/shop | grep "Mască de somn premium"` → matches
+  - [x] `/shop/ghid-seara-linistita | grep -qi "descărcare"` → matches
+  - [x] `/shop/nu-exista` → 404
+  - [x] POST /api/checkout empty items → 400
+  - [x] POST /api/checkout valid body, no Stripe key → 503
+  - [x] download valid token → 200, file non-empty
+  - [x] download_count incremented → 1
+  - [x] expired token → 410
+  - [SKIPPED] stripe-live: STRIPE_SECRET_KEY not set
