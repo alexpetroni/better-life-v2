@@ -9,6 +9,7 @@
 	const { title, description, ogImage, url }: Props = $props();
 
 	const fullTitle = $derived(title.includes('Viață Mai Bună') ? title : `${title} | Viață Mai Bună`);
+	const resolvedOgImage = $derived(ogImage ?? '/og/default.png');
 </script>
 
 <svelte:head>
@@ -23,13 +24,9 @@
 	{#if url}
 		<meta property="og:url" content={url} />
 	{/if}
-	{#if ogImage}
-		<meta property="og:image" content={ogImage} />
-	{/if}
+	<meta property="og:image" content={resolvedOgImage} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={fullTitle} />
 	<meta name="twitter:description" content={description} />
-	{#if ogImage}
-		<meta name="twitter:image" content={ogImage} />
-	{/if}
+	<meta name="twitter:image" content={resolvedOgImage} />
 </svelte:head>

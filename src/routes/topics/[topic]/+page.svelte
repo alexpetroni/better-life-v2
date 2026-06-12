@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
 	import ProductCard from '$lib/components/ProductCard.svelte';
+	import PostCard from '$lib/components/PostCard.svelte';
 	import * as m from '$lib/paraglide/messages.js';
 
 	const { data } = $props();
@@ -27,9 +28,26 @@
 		</div>
 	{/if}
 
+	{#if data.posts && data.posts.length > 0}
+		<div class="mt-8">
+			<h2 class="mb-5 text-xl font-bold text-gray-900">Articole recente</h2>
+			<div class="grid gap-4 sm:grid-cols-2">
+				{#each data.posts as post (post.slug)}
+					<PostCard
+						slug={post.slug}
+						title={post.metadata.title}
+						description={post.metadata.description}
+						topic={post.metadata.topic}
+						date={post.metadata.date}
+					/>
+				{/each}
+			</div>
+		</div>
+	{/if}
+
 	{#if data.products && data.products.length > 0}
-		<div class="mt-4">
-			<h2 class="text-xl font-bold text-gray-900 mb-6">Produse recomandate</h2>
+		<div class="mt-8">
+			<h2 class="text-xl font-bold text-gray-900 mb-5">Produse recomandate</h2>
 			<div class="grid gap-5 sm:grid-cols-2">
 				{#each data.products as product (product.id)}
 					<ProductCard

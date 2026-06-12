@@ -1,4 +1,5 @@
 import { getTopic } from '$lib/content/topics.js';
+import { getAllPosts } from '$lib/blog.js';
 import { error } from '@sveltejs/kit';
 import { db } from '$lib/server/db/client.js';
 import { products } from '$lib/server/db/schema.js';
@@ -15,5 +16,9 @@ export async function load({ params }) {
 		.from(products)
 		.where(and(eq(products.topic, params.topic), eq(products.active, true)));
 
-	return { topic, products: topicProducts };
+	const topicPosts = getAllPosts()
+		.filter((p) => p.metadata.topic === params.topic)
+		.slice(0, 6);
+
+	return { topic, products: topicProducts, posts: topicPosts };
 }

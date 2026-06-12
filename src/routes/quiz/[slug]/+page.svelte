@@ -9,6 +9,7 @@
 <Seo
 	title={quiz.title}
 	description={quiz.description}
+	ogImage="/og/quiz-{quiz.slug}.png"
 />
 
 <div class="min-h-screen bg-gradient-to-br from-brand-50 to-brand-100">

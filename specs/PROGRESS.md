@@ -67,7 +67,7 @@
 
 ## Phase 04 — Shop and Stripe
 - status: done
-- commit: (pending)
+- commit: 9bfddd7
 - checks:
   - [x] `pnpm db:migrate && pnpm tsx scripts/seed.ts` → 4 products
   - [x] `pnpm tsx scripts/seed.ts` re-run → idempotent, still 4
@@ -82,3 +82,20 @@
   - [x] download_count incremented → 1
   - [x] expired token → 410
   - [SKIPPED] stripe-live: STRIPE_SECRET_KEY not set
+
+## Phase 05 — Blog and SEO
+- status: done
+- commit: (pending)
+- checks:
+  - [x] `pnpm check && pnpm vitest run && pnpm build` → all green (30 tests)
+  - [x] prerendered blog pages: 5 posts in .svelte-kit/output/prerendered/pages/blog/
+  - [x] `/blog | grep "trezesti"` → matches
+  - [x] `/blog/rutina-de-seara-in-7-pasi | grep "Mască de somn"` → related product rendered
+  - [x] `/blog/rutina-de-seara-in-7-pasi | grep -qi "testul"` → quiz CTA present
+  - [x] `/blog/nu-exista` → 404
+  - [x] `/sitemap.xml | grep "rutina-de-seara-in-7-pasi"` → matches
+  - [x] `/sitemap.xml | grep "/quiz/somn"` → matches
+  - [x] `/robots.txt | grep "Sitemap:"` → matches
+  - [x] `/quiz/somn | grep "og:image"` → matches
+  - [x] `/topics/somn | grep -qi "blog"` → articles section present
+  - [x] draft check: draft:true post excluded from build, reverted
