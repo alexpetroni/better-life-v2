@@ -10,8 +10,9 @@ Work through each section top-to-bottom before opening the site to traffic.
 
 - [ ] Create a new Vercel project linked to the repository
 - [ ] Set all environment variables (production values):
-  - `DATABASE_URL` — Neon connection string (pooled)
-  - `TOKEN_SECRET` — strong random 32+ char secret
+  - `DATABASE_URL` — Neon **pooled** connection string (the `-pooler` host)
+  - `DIRECT_DATABASE_URL` — Neon **direct** connection string (for migrations)
+  - `EMAIL_TOKEN_SECRET` — strong random 32+ char secret
   - `CRON_SECRET` — strong random secret (also set in Vercel Dashboard → Cron)
   - `RESEND_API_KEY` — live Resend API key
   - `STRIPE_SECRET_KEY` — live Stripe secret key (`sk_live_...`)
@@ -20,13 +21,17 @@ Work through each section top-to-bottom before opening the site to traffic.
   - **Do NOT set** `EMAIL_DRYRUN` in production (leave unset to enable real sends)
 - [ ] Verify `BLOB_READ_WRITE_TOKEN` is set if using Vercel Blob for digital files
 
-## 2. Neon database
+## 2. Neon database (via Vercel Marketplace)
 
-- [ ] Create a Neon project in the EU (Frankfurt) region
-- [ ] Copy the pooled connection string to `DATABASE_URL`
-- [ ] Run migrations: `pnpm db:migrate` (from local with prod `DATABASE_URL`)
-- [ ] Run seed: `pnpm db:seed` (inserts 4 products)
-- [ ] Verify tables exist via Neon console or `pnpm db:studio`
+- [ ] Vercel Dashboard → Storage → add **Neon** from the Marketplace, EU
+      (Frankfurt) region. This auto-injects the connection env vars into the
+      project; confirm `DATABASE_URL` is the **pooled** string and set
+      `DIRECT_DATABASE_URL` to the **direct** string (Neon shows both).
+- [ ] Run migrations against prod (uses the direct URL automatically):
+      `DIRECT_DATABASE_URL='<neon-direct-url>' pnpm db:migrate`
+- [ ] Run seed (4 products): `DATABASE_URL='<neon-pooled-url>' pnpm tsx scripts/seed.ts`
+- [ ] Verify tables exist via the Neon console
+- [ ] (Optional) enable a Neon DB branch for Vercel preview deployments
 
 ## 3. Resend email
 

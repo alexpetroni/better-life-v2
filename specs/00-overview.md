@@ -296,6 +296,7 @@ twice in a row (the email ledger guarantees this — return JSON
 
 ```
 DATABASE_URL=postgres://postgres:postgres@localhost:5433/betterlife
+DIRECT_DATABASE_URL=          # migrations only; Neon direct endpoint in prod, empty locally
 PUBLIC_SITE_URL=http://localhost:5173
 EMAIL_TOKEN_SECRET=dev-secret-change-me-32-bytes-min
 CRON_SECRET=dev-cron-secret
