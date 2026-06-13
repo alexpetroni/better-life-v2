@@ -48,7 +48,7 @@ export function resultsEmail(params: ResultsEmailParams): { subject: string; htm
 
     <p style="margin:0;color:#6b7280;font-size:14px;">
       Cu drag,<br />
-      <strong>Echipa Viață Mai Bună</strong>
+      <strong>Echipa Better Life</strong>
     </p>
   `;
 

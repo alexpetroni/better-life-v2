@@ -35,7 +35,7 @@ export const sequences: Record<string, SequenceStep[]> = {
 <li><strong>Stabilește o oră fixă de culcare</strong> — chiar și cu ±30 de minute. Regularitatea îți calibrează ceasul biologic mai eficient decât orice supliment.</li>
 </ol></p>
 <p><strong>Acțiunea ta pentru astăzi:</strong> Alege o activitate relaxantă și practică-o timp de 10 minute înainte de culcare. Mâine vorbim despre cel mai mare saboteur al somnului modern: lumina artificială.</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -61,7 +61,7 @@ Seara, înlocuiește luminile albe/reci cu lămpi calde (galben-portocalii). Lum
 <p><strong>4. Dimineața: mai multă lumină naturală</strong><br/>
 Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber sau lângă o fereastră) resetează ceasul biologic și îmbunătățește somnul nocturn. Paradoxal, mai multă lumină dimineața înseamnă somn mai bun seara.</p>
 <p><strong>Acțiunea ta pentru astăzi:</strong> Activează un filtru de lumină albastră pe toate dispozitivele și setează-l să se activeze automat la apusul soarelui.</p>
-<p>Până data viitoare,<br/>Echipa Viață Mai Bună</p>
+<p>Până data viitoare,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -86,7 +86,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 <p><strong>Hidratarea</strong></p>
 <p>Deshidratarea ușoară poate perturba somnul. Asigură-te că bei suficientă apă pe parcursul zilei, dar limitează consumul de lichide cu 1-2 ore înainte de culcare pentru a evita trezirile nocturne.</p>
 <p><strong>Acțiunea ta pentru astăzi:</strong> Verifică ora la care bei ultima cafea și încearcă să o muți cu 1 oră mai devreme dacă este după 14:00.</p>
-<p>Până data viitoare,<br/>Echipa Viață Mai Bună</p>
+<p>Până data viitoare,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -110,7 +110,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 <p><strong>Patul: doar pentru somn și intimitate</strong></p>
 <p>Dacă lucrezi, mănânci sau te uiți la TV în pat, creierul tău asociază patul cu activitate, nu cu relaxare. Rezervă patul exclusiv pentru somn — este una dintre cele mai eficiente tehnici din terapia cognitiv-comportamentală pentru insomnie (CBT-I).</p>
 <p><strong>Acțiunea ta pentru această săptămână:</strong> Identifică cea mai mare problemă din dormitorul tău (temperatură, lumină sau zgomot) și acționează în consecință. O singură schimbare, aplicată constant, face diferența.</p>
-<p>Aproape am terminat planul tău — mai avem un email,<br/>Echipa Viață Mai Bună</p>
+<p>Aproape am terminat planul tău — mai avem un email,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -138,7 +138,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 <p><strong>Vei mai primi sfaturi?</strong></p>
 <p>Dacă te-ai abonat la comunicările noastre periodice, vei primi sfaturi și articole noi în funcție de preferințele tale. Poți oricând să ajustezi frecvența sau să te dezabonezi — linkurile sunt mai jos.</p>
 <p>Îți mulțumim că ai ales să investești în somnul și sănătatea ta.</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -166,7 +166,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 <li>Ce trebuie să fie <em>eliminat din cale</em>?</li>
 </ul></p>
 <p>Mâine vorbim despre cel mai puternic instrument al tău: declanșatoarele.</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -192,7 +192,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 </ul></p>
 <p>Aceasta se numește <em>habit stacking</em> — stivuirea obiceiurilor. Avantajul: nu trebuie să-ți amintești separat de obicei, rutina existentă devine declanșatorul.</p>
 <p><strong>Exercițiu pentru astăzi:</strong> Scrie formula completă pentru obiceiul tău: "Imediat după ce [DECLANȘATOR EXISTENT], voi [OBICEI NOU]."</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -217,7 +217,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 <li>Marchează ziua în jurnal chiar și pentru varianta minimă</li>
 </ol>
 <p>Seria vizuală — o bifă pentru fiecare zi — este unul dintre cei mai puternici motivatori psihologici. Nu vrei să rupi lanțul.</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -245,7 +245,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 </ul></p>
 <p>Ca ${profile.name}, principala ta recompensă ar trebui să fie <em>identitară</em>: confirmarea că ești tipul de persoană care construiește obiceiuri bune.</p>
 <p>Mai avem un email — recapitularea și planul tău următor.</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})
@@ -271,7 +271,7 @@ Expunerea la lumina naturală imediat după trezire (10-15 minute în aer liber 
 <p>Profilul tău — <strong>${profile.name}</strong> — îți arată că ai puncte forte specifice. Continuă să construiești pe ele.</p>
 <p>Cel mai important pas acum: după ce obiceiul curent este stabilit (aprox. 60 de zile), adaugă al doilea obicei. Nu înainte.</p>
 <p>Ești la 2 săptămâni dintr-o călătorie de 60. Dar deja ești diferit față de cel care a început.</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 					`,
 					footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 				})

@@ -39,7 +39,7 @@ major versions. Then adjust:
 | File | Content |
 |---|---|
 | `project.inlang/settings.json` | ensure `baseLocale: "ro"`, `locales: ["ro"]`. |
-| `messages/ro.json` | Initial UI strings (all Romanian): `site_name` ("Viață Mai Bună"), `nav_home`, `nav_blog`, `nav_shop`, `nav_quizzes`, `footer_tagline`, `cta_start_quiz` ("Începe testul"), `email_placeholder`, `submit`, `loading`. Grow this file in later phases as UI needs strings. |
+| `messages/ro.json` | Initial UI strings (all Romanian): `site_name` ("Better Life"), `nav_home`, `nav_blog`, `nav_shop`, `nav_quizzes`, `footer_tagline`, `cta_start_quiz` ("Începe testul"), `email_placeholder`, `submit`, `loading`. Grow this file in later phases as UI needs strings. |
 | `src/lib/paraglide/` | generated at dev/build by the vite plugin — add it to `.gitignore`. |
 
 ### 4. Database
@@ -59,7 +59,7 @@ Then: `docker compose up -d db`, `pnpm db:generate`, `pnpm db:migrate`.
 
 | File | Content |
 |---|---|
-| `src/lib/content/topics.ts` | `export interface Topic { slug; name; emoji; tagline; quizSlug?: string }` and `export const topics: Topic[]` with two entries: `somn` ("Somn mai bun", quizSlug `somn`), `obiceiuri` ("Obiceiuri mai bune", quizSlug `obiceiuri`). Plus `getTopic(slug)`. |
+| `src/lib/content/topics.ts` | `export interface Topic { slug; name; emoji; tagline; quizSlug?: string }` and `export const topics: Topic[]` with two entries: `somn` ("Better Sleep", quizSlug `somn`), `obiceiuri` ("Better Habits", quizSlug `obiceiuri`). Plus `getTopic(slug)`. |
 | `src/routes/+layout.svelte` | imports `app.css`; header with site name + nav (Acasă, Blog, Magazin, Teste) using Paraglide messages; footer with tagline + placeholder links (Confidențialitate, Termeni). |
 | `src/routes/+page.svelte` | home: hero ("Trăiește mai bine, pas cu pas" or similar), card per topic from `topics.ts` linking to `/quiz/<quizSlug>` with `cta_start_quiz`, short "cum funcționează" section (3 steps: test → profil → sfaturi pe email). `export const prerender = true` in a `+page.ts`. |
 | `src/routes/topics/[topic]/+page.server.ts|.svelte` | loads topic from registry (404 unknown); renders name/tagline + quiz CTA. (Posts and products are wired in phases 04/05.) |
@@ -89,8 +89,8 @@ pnpm check                                 # 0 errors, 0 warnings tolerated only
 pnpm vitest run                            # passes
 pnpm build                                 # succeeds (adapter-vercel output)
 pnpm dev &  sleep 5
-curl -s http://localhost:5173/ | grep -q "Viață Mai Bună"          # home renders
-curl -s http://localhost:5173/topics/somn | grep -q "Somn"         # topic hub renders
+curl -s http://localhost:5173/ | grep -q "Better Life"          # home renders
+curl -s http://localhost:5173/topics/somn | grep -q "Better Sleep"  # topic hub renders
 curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/topics/nope | grep -q 404
 kill %1
 ```

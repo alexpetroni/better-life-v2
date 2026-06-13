@@ -32,7 +32,7 @@ export function deliveryEmail({ links }: DeliveryEmailParams): string {
         <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
           <tr>
             <td style="background-color:#2d7a4f;padding:24px 32px;">
-              <a href="https://viatamaibuna.ro" style="color:#ffffff;text-decoration:none;font-size:20px;font-weight:700;">Viață Mai Bună</a>
+              <a href="https://viatamaibuna.ro" style="color:#ffffff;text-decoration:none;font-size:20px;font-weight:700;">Better Life</a>
             </td>
           </tr>
           <tr>
@@ -46,7 +46,7 @@ export function deliveryEmail({ links }: DeliveryEmailParams): string {
                 </p>
               </div>
               <p style="margin:24px 0 0;">
-                <a href="https://viatamaibuna.ro" style="color:#2d7a4f;text-decoration:underline;">Vizitează Viață Mai Bună</a>
+                <a href="https://viatamaibuna.ro" style="color:#2d7a4f;text-decoration:underline;">Vizitează Better Life</a>
               </p>
             </td>
           </tr>

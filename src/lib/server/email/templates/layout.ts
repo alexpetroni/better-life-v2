@@ -23,7 +23,7 @@ export function emailLayout({ title, bodyHtml, footerLinks }: LayoutParams): str
           <!-- Header -->
           <tr>
             <td style="background-color:#2d7a4f;padding:24px 32px;">
-              <a href="https://viatamaibuna.ro" style="color:#ffffff;text-decoration:none;font-size:20px;font-weight:700;">Viață Mai Bună</a>
+              <a href="https://viatamaibuna.ro" style="color:#ffffff;text-decoration:none;font-size:20px;font-weight:700;">Better Life</a>
             </td>
           </tr>
           <!-- Body -->
@@ -36,7 +36,7 @@ export function emailLayout({ title, bodyHtml, footerLinks }: LayoutParams): str
           <tr>
             <td style="background-color:#f3f4f6;padding:24px 32px;border-top:1px solid #e5e7eb;">
               <p style="margin:0 0 8px;color:#6b7280;font-size:13px;">
-                Primești acest email pentru că ai completat un test pe Viață Mai Bună.
+                Primești acest email pentru că ai completat un test pe Better Life.
               </p>
               <p style="margin:0;color:#6b7280;font-size:13px;">
                 <a href="${footerLinks.prefs}" style="color:#2d7a4f;text-decoration:underline;">Preferințe email</a>

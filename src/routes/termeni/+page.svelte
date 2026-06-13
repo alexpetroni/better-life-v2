@@ -2,7 +2,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<Seo title="Termeni și condiții" description="Termenii și condițiile de utilizare a platformei Viață Mai Bună." />
+<Seo title="Termeni și condiții" description="Termenii și condițiile de utilizare a platformei Better Life." />
 
 <div class="max-w-3xl mx-auto px-4 py-16">
 	<div class="mb-8 bg-amber-50 border border-amber-200 rounded-lg p-4 text-amber-800 text-sm">
@@ -20,7 +20,7 @@
 		<section>
 			<h2 class="text-xl font-semibold text-gray-800 mb-3">1. Servicii oferite</h2>
 			<p>
-				Viață Mai Bună oferă conținut educativ, teste de autoevaluare și produse digitale și fizice
+				Better Life oferă conținut educativ, teste de autoevaluare și produse digitale și fizice
 				legate de dezvoltare personală, somn, obiceiuri și starea de bine. Conținutul are scop
 				informativ și nu înlocuiește consultul medical sau psihologic profesionist.
 			</p>
@@ -59,7 +59,7 @@
 			<h2 class="text-xl font-semibold text-gray-800 mb-3">4. Proprietate intelectuală</h2>
 			<p>
 				Tot conținutul site-ului (texte, imagini, teste, ghiduri) este protejat prin drept de autor
-				și aparține Viață Mai Bună. Reproducerea fără acord scris este interzisă. Produsele achiziționate
+				și aparține Better Life. Reproducerea fără acord scris este interzisă. Produsele achiziționate
 				sunt licențiate exclusiv pentru uz personal.
 			</p>
 		</section>

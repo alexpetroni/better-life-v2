@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Magazin — Viață Mai Bună</title>
+	<title>Magazin — Better Life</title>
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-4 py-12">

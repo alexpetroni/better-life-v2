@@ -2,7 +2,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<Seo title="Politica de confidențialitate" description="Cum colectăm, utilizăm și protejăm datele tale personale pe Viață Mai Bună." />
+<Seo title="Politica de confidențialitate" description="Cum colectăm, utilizăm și protejăm datele tale personale pe Better Life." />
 
 <div class="max-w-3xl mx-auto px-4 py-16">
 	<div class="mb-8 bg-amber-50 border border-amber-200 rounded-lg p-4 text-amber-800 text-sm">
@@ -13,7 +13,7 @@
 
 	<div class="prose prose-gray max-w-none space-y-8 text-gray-600">
 		<p>
-			Această politică descrie cum Viață Mai Bună (<em>viatamaibuna.ro</em>) colectează, utilizează
+			Această politică descrie cum Better Life (<em>viatamaibuna.ro</em>) colectează, utilizează
 			și protejează datele tale personale. Ultima actualizare: iunie 2026.
 		</p>
 

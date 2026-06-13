@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>{product.name} — Viață Mai Bună</title>
+	<title>{product.name} — Better Life</title>
 </svelte:head>
 
 <div class="mx-auto max-w-4xl px-4 py-12">

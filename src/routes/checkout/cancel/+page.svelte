@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Comandă anulată — Viață Mai Bună</title>
+	<title>Comandă anulată — Better Life</title>
 </svelte:head>
 
 <div class="mx-auto max-w-xl px-4 py-16 text-center">

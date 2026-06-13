@@ -8,7 +8,7 @@
 
 	const { title, description, ogImage, url }: Props = $props();
 
-	const fullTitle = $derived(title.includes('Viață Mai Bună') ? title : `${title} | Viață Mai Bună`);
+	const fullTitle = $derived(title.includes('Better Life') ? title : `${title} | Better Life`);
 	const resolvedOgImage = $derived(ogImage ?? '/og/default.png');
 </script>
 

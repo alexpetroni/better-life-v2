@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog — Viață Mai Bună</title>
+	<title>Blog — Better Life</title>
 	<meta name="description" content="Articole despre somn, obiceiuri și o viață mai bună, scrise de experți." />
 </svelte:head>
 

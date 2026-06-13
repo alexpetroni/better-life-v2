@@ -156,7 +156,7 @@ Create `specs/PROGRESS.md` on first run:
 - commit: <sha>
 - checks:
   - [x] pnpm check → 0 errors
-  - [x] GET / → 200, contains "Viață Mai Bună"
+  - [x] GET / → 200, contains "Better Life"
   - [ ] ...
 - notes: <deviations, extra packages, skipped [stripe-live] items>
 ```

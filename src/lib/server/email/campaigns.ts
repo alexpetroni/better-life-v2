@@ -44,7 +44,7 @@ Transpirația din somn te deshidratează. Un pahar mic de apă (nu rece) cu 30 m
   <a href="${site}/shop/masca-somn" style="color:#2d7a4f;">Mască de somn premium →</a><br/>
   <a href="${site}/shop/ghid-seara-linistita" style="color:#2d7a4f;">Ghid: Seara liniștită (PDF) →</a>
 </p>
-<p>O vară cu somn bun,<br/>Echipa Viață Mai Bună</p>
+<p>O vară cu somn bun,<br/>Echipa Better Life</p>
 				`,
 				footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 			});
@@ -54,7 +54,7 @@ Transpirația din somn te deshidratează. Un pahar mic de apă (nu rece) cu 30 m
 		id: 'general-2026-06',
 		audience: 'all',
 		activeFrom: '2026-06-01',
-		subject: 'Cele mai citite articole ale lunii — digest Viață Mai Bună',
+		subject: 'Cele mai citite articole ale lunii — digest Better Life',
 		bodyHtml: ({ prefsUrl, unsubUrl }) => {
 			const site = siteUrl();
 			return emailLayout({
@@ -72,7 +72,7 @@ Ce, când și cât: regula de 6 ore și variațiile genetice care schimbă totul
 Cel mai simplu instrument pentru a porni orice obicei nou.<br/>
 <a href="${site}/blog/regula-celor-2-minute" style="color:#2d7a4f;">Citește articolul →</a></p>
 <p>Vrem să știm ce subiecte te interesează cel mai mult. Răspunde la acest email cu un subiect și îl vom acoperi în curând.</p>
-<p>Cu drag,<br/>Echipa Viață Mai Bună</p>
+<p>Cu drag,<br/>Echipa Better Life</p>
 				`,
 				footerLinks: { prefs: prefsUrl, unsub: unsubUrl }
 			});

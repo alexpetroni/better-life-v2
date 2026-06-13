@@ -30,7 +30,7 @@ tokenized links. This is the most important phase — quality over speed.
 | File | Content |
 |---|---|
 | `src/lib/server/email/send.ts` | `sendEmail(...)` exactly per overview §5 (insert-first ledger, dry-run branch, Resend call via `fetch` to `https://api.resend.com/emails` — no SDK needed). |
-| `src/lib/server/email/templates/layout.ts` | `emailLayout({ title, bodyHtml, footerLinks: { prefs, unsub } })` → full HTML doc: 600px table, brand-green header with site name, body slot, footer in Romanian ("Primești acest email pentru că ai completat un test pe Viață Mai Bună.") with Preferințe / Dezabonare links. |
+| `src/lib/server/email/templates/layout.ts` | `emailLayout({ title, bodyHtml, footerLinks: { prefs, unsub } })` → full HTML doc: 600px table, brand-green header with site name, body slot, footer in Romanian ("Primești acest email pentru că ai completat un test pe Better Life.") with Preferințe / Dezabonare links. |
 | `src/lib/server/email/templates/results.ts` | `resultsEmail({ quiz, profile, confirmUrl, prefsUrl, unsubUrl })` → `{ subject, html }`. Subject: `Rezultatul tău: <profile.name>`. Body: greeting, profile name + teaser, ALL `fullAdvice` paragraphs, then a prominent CTA box: "Vrei planul tău gratuit de 2 săptămâni? Confirmă adresa de email" → button to `confirmUrl`. This single email doubles as results delivery + opt-in request. |
 
 ### API endpoint

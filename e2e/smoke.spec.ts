@@ -23,7 +23,7 @@ function watchErrors(page: Page): string[] {
 }
 
 // Every page renders the layout header, so this string proves the shell mounted.
-const SITE_NAME = 'Viață Mai Bună';
+const SITE_NAME = 'Better Life';
 
 const PAGES = [
 	'/',

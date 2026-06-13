@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Comandă confirmată — Viață Mai Bună</title>
+	<title>Comandă confirmată — Better Life</title>
 </svelte:head>
 
 <div class="mx-auto max-w-xl px-4 py-16 text-center">

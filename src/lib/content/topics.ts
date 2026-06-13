@@ -9,14 +9,14 @@ export interface Topic {
 export const topics: Topic[] = [
 	{
 		slug: 'somn',
-		name: 'Somn mai bun',
+		name: 'Better Sleep',
 		emoji: '😴',
 		tagline: 'Descoperă obiceiurile care îți îmbunătățesc somnul și energia de zi cu zi.',
 		quizSlug: 'somn'
 	},
 	{
 		slug: 'obiceiuri',
-		name: 'Obiceiuri mai bune',
+		name: 'Better Habits',
 		emoji: '✨',
 		tagline: 'Construiește rutine sănătoase care durează și transformă-ți viața pas cu pas.',
 		quizSlug: 'obiceiuri'

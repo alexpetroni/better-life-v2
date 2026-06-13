@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-	<title>{metadata.title} — Viață Mai Bună</title>
+	<title>{metadata.title} — Better Life</title>
 	<meta name="description" content={metadata.description} />
 	<meta property="og:title" content={metadata.title} />
 	<meta property="og:description" content={metadata.description} />

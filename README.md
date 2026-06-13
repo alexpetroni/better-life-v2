@@ -1,4 +1,4 @@
-# Viață Mai Bună — Better Life
+# Better Life
 
 Romanian self-improvement platform with quiz funnels, a blog, and a shop.
 

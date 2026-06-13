@@ -55,7 +55,7 @@
 </script>
 
 <svelte:head>
-	<title>Coș de cumpărături — Viață Mai Bună</title>
+	<title>Coș de cumpărături — Better Life</title>
 </svelte:head>
 
 <div class="mx-auto max-w-3xl px-4 py-12">

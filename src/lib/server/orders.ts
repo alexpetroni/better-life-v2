@@ -132,7 +132,7 @@ export async function fulfillCheckoutSession(
 		await sendEmail({
 			emailKey: `delivery:${orderId}`,
 			to: session.customer_details.email,
-			subject: 'Descarcă-ți produsele de la Viață Mai Bună',
+			subject: 'Descarcă-ți produsele de la Better Life',
 			html: deliveryEmail({ links: downloadLinks })
 		});
 	}
@@ -149,7 +149,7 @@ export async function fulfillCheckoutSession(
 		await sendEmail({
 			emailKey: `order:${orderId}`,
 			to: session.customer_details.email,
-			subject: 'Confirmare comandă — Viață Mai Bună',
+			subject: 'Confirmare comandă — Better Life',
 			html: orderConfirmEmail({
 				orderId,
 				email: session.customer_details.email,

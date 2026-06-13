@@ -1,4 +1,4 @@
-# 00 — Overview: "Better Life" (Viață Mai Bună)
+# 00 — Overview: "Better Life"
 
 Read this file completely before starting any phase. Every phase spec assumes the
 context, schema, types, and conventions defined here. When a phase spec and this
@@ -267,6 +267,12 @@ twice in a row (the email ledger guarantees this — return JSON
 
 ## 6. Conventions
 
+- **Brand & section names (English, untranslated in every locale):** the site
+  is **"Better Life"** and the topic/section display names are **"Better Sleep"**
+  and **"Better Habits"** — never translate these to Romanian, even on the `ro`
+  site. They are proper nouns. Topic *slugs* stay `somn`/`obiceiuri` (URLs,
+  email_keys, content dirs all key off them — do not rename). All other copy is
+  Romanian per the next rule.
 - **Language:** all user-facing copy (pages, quiz content, emails, blog posts) in
   Romanian, with diacritics (ă â î ș ț). Code, comments, commit messages in English.
 - **UI strings** (nav labels, buttons, form labels, validation messages) go in
@@ -294,7 +300,7 @@ PUBLIC_SITE_URL=http://localhost:5173
 EMAIL_TOKEN_SECRET=dev-secret-change-me-32-bytes-min
 CRON_SECRET=dev-cron-secret
 EMAIL_DRYRUN=1
-EMAIL_FROM="Viață Mai Bună <salut@viatamaibuna.example>"
+EMAIL_FROM="Better Life <salut@viatamaibuna.example>"
 RESEND_API_KEY=            # optional in dev; dry-run when empty
 STRIPE_SECRET_KEY=         # optional in dev; Stripe steps skip when empty
 STRIPE_WEBHOOK_SECRET=     # from `stripe listen` in dev

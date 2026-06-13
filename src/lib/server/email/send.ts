@@ -51,7 +51,7 @@ export async function sendEmail(params: SendEmailParams): Promise<'sent' | 'skip
 				...headers
 			},
 			body: JSON.stringify({
-				from: env.EMAIL_FROM ?? 'Viață Mai Bună <salut@viatamaibuna.example>',
+				from: env.EMAIL_FROM ?? 'Better Life <salut@viatamaibuna.example>',
 				to: [to],
 				subject,
 				html
