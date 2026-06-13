@@ -9,23 +9,30 @@ export interface CartItem {
 	quantity: number;
 }
 
-function createCart() {
-	let items = $state<CartItem[]>([]);
+function load(): CartItem[] {
+	if (!browser) return [];
+	try {
+		const stored = localStorage.getItem('bl-cart');
+		return stored ? JSON.parse(stored) : [];
+	} catch {
+		return [];
+	}
+}
 
-	if (browser) {
+function createCart() {
+	let items = $state<CartItem[]>(load());
+
+	// Persist explicitly after each mutation. We cannot use $effect here: this
+	// module-level store is created outside any component, where effects are
+	// orphaned (https://svelte.dev/e/effect_orphan).
+	function persist() {
+		if (!browser) return;
 		try {
-			const stored = localStorage.getItem('bl-cart');
-			if (stored) items = JSON.parse(stored);
+			localStorage.setItem('bl-cart', JSON.stringify(items));
 		} catch {
-			// ignore
+			// ignore (private mode / quota)
 		}
 	}
-
-	$effect(() => {
-		if (browser) {
-			localStorage.setItem('bl-cart', JSON.stringify(items));
-		}
-	});
 
 	const totalCents = $derived(
 		items.reduce((sum, item) => sum + item.priceCents * item.quantity, 0)
@@ -38,10 +45,12 @@ function createCart() {
 		} else {
 			items = [...items, { ...item, quantity: 1 }];
 		}
+		persist();
 	}
 
 	function remove(productId: string) {
 		items = items.filter((i) => i.productId !== productId);
+		persist();
 	}
 
 	function setQuantity(productId: string, quantity: number) {
@@ -52,10 +61,12 @@ function createCart() {
 		items = items.map((i) =>
 			i.productId === productId ? { ...i, quantity: Math.min(10, quantity) } : i
 		);
+		persist();
 	}
 
 	function clear() {
 		items = [];
+		persist();
 	}
 
 	return {
