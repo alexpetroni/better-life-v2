@@ -13,10 +13,12 @@
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
 		"db:query": "tsx scripts/db.ts",
-		"test": "vitest run"
+		"test": "vitest run",
+		"test:e2e": "playwright test"
 	},
 	"devDependencies": {
 		"@inlang/paraglide-js": "^2.18.2",
+		"@playwright/test": "^1.60.0",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/kit": "^2.63.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",

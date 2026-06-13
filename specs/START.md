@@ -130,6 +130,11 @@ Useful helpers (exist after phase 01):
 - `pnpm db:query "select ..."` → runs SQL via `scripts/db.ts`, prints JSON rows.
   Use it for every DB assertion in the acceptance criteria.
 - `docker compose up -d db` / `docker compose down` for the database.
+- `pnpm test:e2e` → Playwright smoke suite (`e2e/smoke.spec.ts`): loads every key
+  page plus the full quiz funnel in a real browser and fails on ANY console
+  error or uncaught exception. Catches client-side hydration bugs that the
+  curl-based acceptance criteria (server-render only) cannot. Needs Postgres up
+  and a one-time `pnpm exec playwright install chromium`.
 
 The repo ships a project `.mcp.json`: the **svelte** MCP server (official docs +
 `svelte-autofixer` — run the autofixer on non-trivial new `.svelte` components
