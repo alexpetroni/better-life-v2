@@ -7,7 +7,9 @@ const config = {
 	extensions: ['.svelte', '.md'],
 	preprocess: [vitePreprocess(), mdsvex({ extensions: ['.md'] })],
 	kit: {
-		adapter: adapter(),
+		// Run serverless functions in Frankfurt, next to the Neon (EU) database —
+		// avoids a transatlantic round-trip on every query for an RO/EU audience.
+		adapter: adapter({ regions: ['fra1'] }),
 		prerender: {
 			handleUnseenRoutes: 'ignore',
 			handleHttpError: ({ path, referrer, message }) => {

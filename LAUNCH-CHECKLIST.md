@@ -3,6 +3,8 @@
 **DO NOT EXECUTE — manual, human-owned, production-credential steps.**
 
 Work through each section top-to-bottom before opening the site to traffic.
+See **`DEPLOYMENT.md`** for the detailed Vercel + Neon runbook (this file is the
+condensed tick-list).
 
 ---
 
