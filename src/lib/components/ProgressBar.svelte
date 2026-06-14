@@ -8,10 +8,7 @@
 	const pct = $derived(Math.round((current / total) * 100));
 </script>
 
-<div class="w-full bg-gray-200 rounded-full h-2">
-	<div
-		class="bg-brand-600 h-2 rounded-full transition-all duration-300"
-		style="width: {pct}%"
-	></div>
+<div class="h-1 w-full bg-rule">
+	<div class="h-1 bg-brand-600 transition-all duration-300" style="width: {pct}%"></div>
 </div>
-<p class="text-xs text-gray-500 mt-1 text-right">{current} / {total}</p>
+<p class="meta mt-2 text-right">Întrebarea {current} / {total}</p>

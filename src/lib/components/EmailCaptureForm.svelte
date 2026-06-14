@@ -40,26 +40,25 @@
 	}
 </script>
 
-<form onsubmit={handleSubmit} class="space-y-4">
-	<div>
-		<p class="text-lg font-semibold text-gray-900 mb-2">Unde îți trimitem rezultatul?</p>
-		<p class="text-gray-600 text-sm mb-4">
-			Îți trimitem rezultatul complet și sfaturi personalizate pe email. Planul tău gratuit de 2
-			săptămâni pornește de la confirmare.
-		</p>
-	</div>
+<form onsubmit={handleSubmit}>
+	<p class="kicker">Aproape gata</p>
+	<p class="mt-2 font-serif text-2xl font-semibold leading-tight text-ink">
+		Unde îți trimitem rezultatul?
+	</p>
+	<p class="mt-3 font-serif text-ink/70">
+		Îți trimitem rezultatul complet și sfaturi personalizate pe email. Planul tău gratuit de 2
+		săptămâni pornește de la confirmare.
+	</p>
 
-	<div>
-		<label for="email-input" class="block text-sm font-medium text-gray-700 mb-1">
-			Adresa de email
-		</label>
+	<div class="mt-6">
+		<label for="email-input" class="meta mb-2 block !text-ink">Adresa de email</label>
 		<input
 			id="email-input"
 			type="email"
 			bind:value={email}
 			placeholder="adresa@exemplu.ro"
 			required
-			class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+			class="w-full border border-rule bg-white px-4 py-3 font-serif text-lg text-ink focus:border-ink focus:outline-none"
 		/>
 	</div>
 
@@ -77,20 +76,20 @@
 	</div>
 
 	{#if error}
-		<p class="text-red-600 text-sm">{error}</p>
+		<p class="mt-4 font-serif text-brand-700">{error}</p>
 	{/if}
-
-	<p class="text-xs text-gray-500">
-		Prin trimiterea adresei, ești de acord cu
-		<a href="/privacy" class="text-brand-600 hover:underline">politica noastră de confidențialitate</a>.
-		Poți dezabona oricând cu un singur click.
-	</p>
 
 	<button
 		type="submit"
 		disabled={loading}
-		class="w-full bg-brand-600 hover:bg-brand-500 disabled:opacity-50 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+		class="mt-5 w-full rounded-sm bg-brand-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-brand-700 disabled:opacity-50"
 	>
-		{loading ? 'Se trimite...' : 'Trimite rezultatele pe email'}
+		{loading ? 'Se trimite…' : 'Trimite rezultatele pe email'}
 	</button>
+
+	<p class="mt-4 font-serif text-sm text-ink/55">
+		Prin trimiterea adresei, ești de acord cu
+		<a href="/privacy" class="text-brand-700 underline">politica de confidențialitate</a>. Poți
+		dezabona oricând cu un singur click.
+	</p>
 </form>

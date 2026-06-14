@@ -1,4 +1,7 @@
 <script lang="ts">
+	import EditorialImage from './EditorialImage.svelte';
+	import { getTopic } from '$lib/content/topics.js';
+
 	interface Props {
 		slug: string;
 		title: string;
@@ -9,30 +12,22 @@
 
 	const { slug, title, description, topic, date }: Props = $props();
 
+	const kicker = $derived((getTopic(topic)?.name ?? 'Better Life').toUpperCase());
 	const formattedDate = $derived(
-		new Intl.DateTimeFormat('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' }).format(
-			new Date(date)
-		)
+		new Intl.DateTimeFormat('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })
+			.format(new Date(date))
+			.toUpperCase()
 	);
 </script>
 
-<article class="flex flex-col gap-2 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md">
-	<div class="flex items-center gap-2">
-		<a
-			href="/topics/{topic}"
-			class="rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-medium capitalize text-brand-700 hover:bg-brand-200 transition"
-		>
-			{topic}
-		</a>
-		<time datetime={date} class="text-xs text-gray-400">{formattedDate}</time>
-	</div>
-	<a href="/blog/{slug}" class="group">
-		<h2 class="text-base font-semibold text-gray-900 group-hover:text-brand-700 leading-snug">
-			{title}
-		</h2>
+<article class="flex flex-col">
+	<a href="/blog/{slug}" class="block">
+		<EditorialImage {topic} class="mb-3" />
 	</a>
-	<p class="text-sm text-gray-600 line-clamp-2">{description}</p>
-	<a href="/blog/{slug}" class="mt-auto text-sm font-medium text-brand-600 hover:text-brand-800 transition">
-		Citește articolul →
-	</a>
+	<a href="/topics/{topic}" class="kicker hover:underline">{kicker}</a>
+	<h2 class="mt-1.5">
+		<a href="/blog/{slug}" class="headline text-xl">{title}</a>
+	</h2>
+	<p class="mt-2 line-clamp-2 font-serif text-[0.95rem] leading-snug text-ink/70">{description}</p>
+	<p class="meta mt-2">{formattedDate}</p>
 </article>

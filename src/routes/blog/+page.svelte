@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PostCard from '$lib/components/PostCard.svelte';
+	import { getTopic } from '$lib/content/topics.js';
 
 	const { data } = $props();
 
@@ -9,37 +10,51 @@
 	const filtered = $derived(
 		selectedTopic ? data.posts.filter((p) => p.metadata.topic === selectedTopic) : data.posts
 	);
+
+	const label = (topic: string) => getTopic(topic)?.name ?? topic;
 </script>
 
 <svelte:head>
 	<title>Blog — Better Life</title>
-	<meta name="description" content="Articole despre somn, obiceiuri și o viață mai bună, scrise de experți." />
+	<meta
+		name="description"
+		content="Articole despre somn, obiceiuri și o viață mai bună, scrise de experți."
+	/>
 </svelte:head>
 
-<div class="mx-auto max-w-4xl px-4 py-12">
-	<h1 class="mb-2 text-3xl font-bold text-gray-900">Blog</h1>
-	<p class="mb-8 text-gray-600">Articole practice despre somn, obiceiuri și o viață mai sănătoasă.</p>
+<div class="mx-auto max-w-[1100px] px-6 py-12">
+	<header class="border-b-2 border-ink pb-4">
+		<p class="kicker">Better Life</p>
+		<h1 class="headline mt-2 text-4xl font-semibold md:text-5xl">Blog</h1>
+		<p class="mt-3 font-serif text-lg text-ink/70">
+			Articole practice despre somn, obiceiuri și o viață mai sănătoasă.
+		</p>
+	</header>
 
 	{#if topics.length > 1}
-		<div class="mb-8 flex flex-wrap gap-2">
+		<div class="my-8 flex flex-wrap gap-5 font-sans text-xs font-semibold uppercase tracking-wide">
 			<button
 				onclick={() => (selectedTopic = null)}
-				class="rounded-full px-4 py-1.5 text-sm font-medium capitalize transition {selectedTopic === null ? 'bg-brand-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
+				class="transition-colors {selectedTopic === null
+					? 'text-brand-700 underline underline-offset-4'
+					: 'text-ink/55 hover:text-ink'}"
 			>
 				Toate
 			</button>
 			{#each topics as topic}
 				<button
 					onclick={() => (selectedTopic = topic)}
-					class="rounded-full px-4 py-1.5 text-sm font-medium capitalize transition {selectedTopic === topic ? 'bg-brand-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
+					class="transition-colors {selectedTopic === topic
+						? 'text-brand-700 underline underline-offset-4'
+						: 'text-ink/55 hover:text-ink'}"
 				>
-					{topic}
+					{label(topic)}
 				</button>
 			{/each}
 		</div>
 	{/if}
 
-	<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+	<div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
 		{#each filtered as post (post.slug)}
 			<PostCard
 				slug={post.slug}
@@ -49,7 +64,7 @@
 				date={post.metadata.date}
 			/>
 		{:else}
-			<p class="col-span-full text-gray-500">Niciun articol găsit.</p>
+			<p class="col-span-full font-serif text-ink/60">Niciun articol găsit.</p>
 		{/each}
 	</div>
 </div>

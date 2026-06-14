@@ -56,7 +56,8 @@ test('quiz funnel: somn end-to-end', async ({ page }) => {
 	const errors = watchErrors(page);
 
 	await page.goto('/quiz/somn', { waitUntil: 'load' });
-	await page.getByRole('link', { name: 'Începe testul' }).click();
+	// header now also has an "Începe testul" button, so target the play link by href
+	await page.locator('a[href="/quiz/somn/play"]').first().click();
 	await expect(page).toHaveURL(/\/quiz\/somn\/play/);
 
 	// Answer every question by clicking the first option; on the last question

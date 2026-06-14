@@ -29,50 +29,39 @@
 	<title>{product.name} — Better Life</title>
 </svelte:head>
 
-<div class="mx-auto max-w-4xl px-4 py-12">
-	<a href="/shop" class="mb-8 inline-flex items-center gap-1 text-sm text-gray-500 hover:text-brand-700">
-		← Înapoi la magazin
-	</a>
+<div class="mx-auto max-w-[1000px] px-6 py-12">
+	<a href="/shop" class="meta hover:text-brand-700">← Înapoi la magazin</a>
 
-	<div class="grid gap-8 md:grid-cols-2">
+	<div class="mt-8 grid gap-10 md:grid-cols-2">
 		<div>
 			{#if product.image_url}
-				<img
-					src={product.image_url}
-					alt={product.name}
-					class="w-full rounded-xl object-cover shadow-md"
-				/>
+				<img src={product.image_url} alt={product.name} class="aspect-[4/3] w-full bg-photo object-cover" />
 			{:else}
-				<div class="flex h-64 w-full items-center justify-center rounded-xl bg-brand-100">
-					<span class="text-6xl">📦</span>
-				</div>
+				<div class="aspect-[4/3] w-full bg-photo"></div>
 			{/if}
 		</div>
 
 		<div class="flex flex-col">
-			<div class="mb-3">
-				<span class="rounded-full px-3 py-1 text-sm font-medium {product.type === 'digital' ? 'bg-blue-100 text-blue-700' : 'bg-amber-100 text-amber-700'}">
-					{product.type === 'digital' ? 'Descărcare instantă' : 'Livrare prin curier'}
-				</span>
-			</div>
+			<p class="kicker">{product.type === 'digital' ? 'Descărcare instantă' : 'Livrare prin curier'}</p>
+			<h1 class="headline mt-2 text-3xl font-semibold leading-tight md:text-4xl">{product.name}</h1>
+			<p class="mt-4 font-serif text-lg leading-relaxed text-ink/75">{product.description}</p>
 
-			<h1 class="mb-4 text-2xl font-bold text-gray-900">{product.name}</h1>
-			<p class="mb-6 text-gray-600 leading-relaxed">{product.description}</p>
-
-			<div class="mt-auto">
-				<p class="mb-4 text-3xl font-bold text-brand-700">{price}</p>
+			<div class="mt-8 border-t border-rule pt-6">
+				<p class="font-mono text-3xl text-ink">{price}</p>
 				<button
 					onclick={addToCart}
-					class="w-full rounded-xl bg-brand-600 py-3 text-base font-semibold text-white hover:bg-brand-700 transition disabled:opacity-60"
+					class="mt-4 w-full rounded-sm bg-brand-600 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
 					disabled={added}
 				>
 					{added ? '✓ Adăugat în coș' : 'Adaugă în coș'}
 				</button>
-				{#if product.type === 'physical'}
-					<p class="mt-2 text-center text-sm text-gray-500">Livrare în 24–48h. Transport 15 lei (gratuit peste 200 lei).</p>
-				{:else}
-					<p class="mt-2 text-center text-sm text-gray-500">Acces imediat după finalizarea plății.</p>
-				{/if}
+				<p class="meta mt-3 normal-case tracking-normal">
+					{#if product.type === 'physical'}
+						Livrare în 24–48h. Transport 15 lei (gratuit peste 200 lei).
+					{:else}
+						Acces imediat după finalizarea plății.
+					{/if}
+				</p>
 			</div>
 		</div>
 	</div>

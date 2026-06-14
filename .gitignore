@@ -30,3 +30,4 @@ project.inlang/cache/
 /playwright-report/
 /.playwright/
 /transcript-prompt.md
+/shot.mjs

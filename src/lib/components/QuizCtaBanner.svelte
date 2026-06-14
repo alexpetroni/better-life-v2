@@ -6,18 +6,18 @@
 	}
 
 	const { quizSlug }: Props = $props();
-
 	const quiz = $derived(getQuiz(quizSlug));
 </script>
 
 {#if quiz}
-	<div class="rounded-xl bg-brand-50 border border-brand-200 p-6">
-		<p class="mb-3 text-brand-800 font-medium">
-			Vrei un plan personalizat? Fă testul de {quiz.topic} →
+	<div class="my-12 border-y-2 border-ink py-8 text-center">
+		<p class="kicker">Testează-te</p>
+		<p class="mx-auto mt-2 max-w-xl font-serif text-2xl font-semibold leading-snug">
+			Vrei un plan personalizat? Fă testul de {quiz.topic}.
 		</p>
 		<a
 			href="/quiz/{quizSlug}"
-			class="inline-block rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 transition"
+			class="mt-5 inline-block rounded-sm bg-brand-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-brand-700"
 		>
 			Începe testul gratuit
 		</a>

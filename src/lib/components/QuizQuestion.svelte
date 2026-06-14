@@ -11,14 +11,15 @@
 </script>
 
 <div class="space-y-3">
-	<h2 class="text-xl font-semibold text-gray-900 mb-6">{question.text}</h2>
+	<h2 class="mb-6 font-serif text-2xl font-semibold leading-tight text-ink">{question.text}</h2>
 	{#each question.options as option}
 		<button
 			data-testid="quiz-option"
 			onclick={() => onSelect(option.id)}
-			class="w-full text-left p-4 rounded-xl border-2 transition-all duration-150 {selected === option.id
-				? 'border-brand-600 bg-brand-50 text-brand-800 font-medium'
-				: 'border-gray-200 hover:border-brand-300 hover:bg-gray-50 text-gray-700'}"
+			class="block w-full border p-4 text-left font-serif text-lg transition-colors duration-150 {selected ===
+			option.id
+				? 'border-brand-600 bg-brand-50 text-brand-900'
+				: 'border-rule text-ink hover:border-ink'}"
 		>
 			{option.label}
 		</button>
