@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-  <rect width="400" height="300" fill="#1a1a2e"/>
-  <ellipse cx="200" cy="165" rx="135" ry="78" fill="#3a2f1e"/>
-  <ellipse cx="200" cy="165" rx="110" ry="56" fill="#7a5c2e"/>
-  <text x="200" y="105" text-anchor="middle" fill="#e2e8f0" font-family="sans-serif" font-size="18" font-weight="bold">Lampă</text>
-  <text x="200" y="130" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="14">răsărit simulat</text>
+  <rect width="400" height="300" fill="#d9d7ce"/>
+  <rect x="14" y="14" width="372" height="272" fill="none" stroke="#1a1a18" stroke-opacity="0.12"/>
+  <text x="200" y="142" text-anchor="middle" fill="#57534b" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-style="italic">Lampă cu</text><text x="200" y="172" text-anchor="middle" fill="#57534b" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-style="italic">răsărit</text>
 </svg>
