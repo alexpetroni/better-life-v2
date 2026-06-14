@@ -2,6 +2,7 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
+	import { afterNavigate } from '$app/navigation';
 	import * as m from '$lib/paraglide/messages.js';
 
 	if (!dev) {
@@ -13,7 +14,20 @@
 	}
 
 	const { children }: Props = $props();
+
+	let menuOpen = $state(false);
+
+	// close the menu after any navigation (link click, back/forward)
+	afterNavigate(() => {
+		menuOpen = false;
+	});
 </script>
+
+<svelte:window
+	onkeydown={(e) => {
+		if (e.key === 'Escape') menuOpen = false;
+	}}
+/>
 
 <div class="flex min-h-screen flex-col bg-white text-ink">
 	<!-- thin masthead bar -->
@@ -25,10 +39,22 @@
 		>
 			<!-- left: utilities + sections -->
 			<nav class="flex items-center gap-5 font-sans text-[0.8rem] text-ink">
-				<button aria-label="Meniu" class="hover:text-brand-700">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-						<line x1="3" y1="7" x2="21" y2="7" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="17" x2="21" y2="17" />
-					</svg>
+				<button
+					aria-label="Meniu"
+					aria-expanded={menuOpen}
+					aria-controls="site-menu"
+					class="hover:text-brand-700"
+					onclick={() => (menuOpen = !menuOpen)}
+				>
+					{#if menuOpen}
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+							<line x1="5" y1="5" x2="19" y2="19" /><line x1="19" y1="5" x2="5" y2="19" />
+						</svg>
+					{:else}
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+							<line x1="3" y1="7" x2="21" y2="7" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="17" x2="21" y2="17" />
+						</svg>
+					{/if}
 				</button>
 				<button aria-label="Caută" class="hover:text-brand-700">
 					<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -57,6 +83,39 @@
 				</a>
 			</div>
 		</div>
+
+		<!-- expandable menu (essential on mobile; available on all sizes) -->
+		{#if menuOpen}
+			<div id="site-menu" class="border-t border-rule">
+				<nav class="mx-auto max-w-[1200px] px-6 py-6">
+					<p class="kicker">Navigare</p>
+					<ul class="mt-3">
+						{#each [['/', m.nav_home()], ['/blog', m.nav_blog()], ['/shop', m.nav_shop()], ['/quiz', m.nav_quizzes()], ['/cart', m.nav_cart()]] as [href, label]}
+							<li class="border-b border-rule">
+								<a href={href} class="headline block py-3 text-2xl">{label}</a>
+							</li>
+						{/each}
+					</ul>
+
+					<p class="kicker mt-6">Secțiuni</p>
+					<ul class="mt-3">
+						<li class="border-b border-rule">
+							<a href="/topics/somn" class="headline block py-3 text-xl">Better Sleep</a>
+						</li>
+						<li class="border-b border-rule">
+							<a href="/topics/obiceiuri" class="headline block py-3 text-xl">Better Habits</a>
+						</li>
+					</ul>
+
+					<a
+						href="/quiz/somn"
+						class="mt-6 inline-block rounded-sm bg-brand-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-brand-700"
+					>
+						{m.cta_start_quiz()}
+					</a>
+				</nav>
+			</div>
+		{/if}
 	</header>
 
 	<main class="flex-1">
